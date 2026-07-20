@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hightower Helix • Custom Nachos • Tower District</title>
+    <meta name="description" content="Single serving custom nachos from the Tower District. Build your exact order with Tillamook Sharp Cheddar and Taco Works chips. Get your 5-character code and repeat anytime.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@700&amp;display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .display-font { font-family: 'Poppins', system_ui, sans-serif; font-weight: 700; letter-spacing: -1.5px; }
+        .section-header { font-size: 2.5rem; line-height: 1.1; font-weight: 700; letter-spacing: -2px; }
+        .code-display { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; letter-spacing: 4px; }
+        .topping-card { transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1); }
+        .topping-card.active { border-color: #FFD700; background-color: #1f2937; }
+        .price { font-variant-numeric: tabular-nums; }
+        .realistic-shadow { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- NAV -->
+    <nav class="border-b border-zinc-800 bg-zinc-950/95 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-4">
+                <div class="w-11 h-11 bg-gradient-to-br from-yellow-400 to-red-500 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-tachometer-alt text-3xl text-white"></i>
+                </div>
+                <div>
+                    <div class="font-black text-3xl tracking-tighter">HIGHTOWER HELIX</div>
+                    <div class="text-[10px] text-zinc-400 -mt-1 tracking-[2px]">TOWER DISTRICT • FRESNO</div>
+                </div>
+            </div>
+            <a href="#build" class="px-8 py-2.5 bg-white text-black font-semibold rounded-3xl hover:bg-yellow-400 transition text-sm">BUILD YOUR ORDER</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="max-w-6xl mx-auto px-6 pt-14 pb-10">
+        <div class="grid md:grid-cols-12 gap-10 items-center">
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-zinc-900 border border-zinc-700 rounded-3xl text-sm mb-6">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="font-medium tracking-wider">SINGLE SERVING • CUSTOM MADE • EVENT READY</span>
+                </div>
+                
+                <h1 class="display-font text-7xl md:text-8xl leading-none tracking-tighter mb-6">
+                    NOTHING BUT<br>
+                    <span class="bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">NACHOS</span>
+                </h1>
+                
+                <p class="max-w-lg text-2xl text-zinc-300 mb-8">
+                    Premium single serving nachos built exactly to your specs with Tillamook Sharp Cheddar and Taco Works chips.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#build" class="px-10 py-4 bg-yellow-400 hover:bg-yellow-300 transition text-black font-bold text-lg rounded-3xl flex items-center gap-x-3">
+                        <span>BUILD YOUR SINGLE SERVING</span>
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex items-center gap-x-6 text-sm text-zinc-400">
+                    <div>From the Tower District</div>
+                    <div class="w-px h-3 bg-white/30"></div>
+                    <div>Repeat with a 5-character code</div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-5">
+                <div class="relative rounded-3xl overflow-hidden border border-zinc-700 realistic-shadow">
+                    <img src="https://picsum.photos/id/292/900/1100" class="w-full aspect-[4/5] object-cover" alt="Hightower Helix single serving custom nachos with dramatic cheese pull">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-8">
+                        <div class="text-yellow-400 text-sm tracking-[3px]">EVERY CHIP FULLY LOADED</div>
+                        <div class="text-4xl font-black tracking-tighter">HIGHTOWER HELIX</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRICING TRANSPARENCY BAR -->
+    <div class="bg-zinc-900 border-y border-zinc-800 py-4">
+        <div class="max-w-6xl mx-auto px-6 text-center text-sm">
+            <span class="text-zinc-400">Transparent pricing • Base serving + Black Beans at exact can cost • Adjust variables in the code</span>
+        </div>
+    </div>
+
+    <!-- BUILD YOUR ORDER -->
+    <div id="build" class="max-w-5xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <div class="inline px-5 py-1.5 rounded-3xl bg-yellow-400/10 text-yellow-400 text-xs tracking-[3px] font-bold">CUSTOM SINGLE SERVING</div>
+            <h2 class="section-header mt-3">Build your exact order.<br>Get your code + price.</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8">
+            
+            <!-- Controls -->
+            <div class="lg:col-span-7 bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+                
+                <!-- Ratio + Blend -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="font-semibold">Base Ratio + Blend Level</div>
+                        <div class="text-xs text-yellow-400">0 = Pure Indian (no cheese hack)</div>
+                    </div>
+                    
+                    <div class="flex gap-2 mb-4">
+                        <button onclick="setRatio('B')" id="btnB" class="flex-1 py-3 rounded-2xl border border-white/20 hover:border-yellow-400 font-semibold">B - Balanced</button>
+                        <button onclick="setRatio('C')" id="btnC" class="flex-1 py-3 rounded-2xl border border-white/20 hover:border-yellow-400 font-semibold">C - Cheesy</button>
+                        <button onclick="setRatio('S')" id="btnS" class="flex-1 py-3 rounded-2xl border border-white/20 hover:border-yellow-400 font-semibold">S - Saucy</button>
+                        <button onclick="setRatio('X')" id="btnX" class="flex-1 py-3 rounded-2xl border border-white/20 hover:border-yellow-400 font-semibold">X - Max</button>
+                    </div>
+                    
+                    <div class="grid grid-cols-10 gap-1.5 mb-1" id="blend-buttons"></div>
+                    <div class="text-[10px] text-center text-zinc-400">Blend 0–9 • 0 = no cheese / full Indian vegetarian • 9 = maximum cheese</div>
+                </div>
+
+                <!-- Toppings -->
+                <div>
+                    <div class="font-semibold mb-4">Toppings &amp; Add-ons</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="toppings-grid"></div>
+                    <div class="mt-3 text-xs text-yellow-400">Black Beans = +$1 (exact can cost pass-through)</div>
+                </div>
+            </div>
+
+            <!-- Live Summary -->
+            <div class="lg:col-span-5 bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
+                <div class="font-semibold text-lg mb-4">Your Order</div>
+                
+                <div id="live-summary" class="flex-1 space-y-3 text-sm"></div>
+                
+                <div class="mt-auto pt-6 border-t border-zinc-700">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <div class="text-sm text-zinc-400">Total</div>
+                        <div id="live-price" class="price text-4xl font-black text-yellow-400">$9.50</div>
+                    </div>
+                    
+                    <div id="code-display" class="code-display text-4xl font-black tracking-[5px] bg-black border border-yellow-400/30 text-yellow-400 py-5 px-4 rounded-2xl text-center mb-4">B5K4P</div>
+                    
+                    <button onclick="copyCode()" class="w-full py-3.5 bg-white hover:bg-yellow-400 transition text-black font-bold rounded-3xl flex items-center justify-center gap-x-2">
+                        <i class="fa-solid fa-copy"></i>
+                        <span>COPY CODE &amp; PRICE</span>
+                    </button>
+                    
+                    <div class="text-center text-xs text-zinc-400 mt-4">DM or text Aaron with this code.<br>Your exact order will be ready.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW THE CODE WORKS -->
+    <div class="bg-zinc-900 border-y border-zinc-800 py-14">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="section-header mb-8">Your code is your order</h3>
+            <div class="max-w-2xl mx-auto text-lg text-zinc-300">
+                Build it once. Get a 5-character code. Next time just say or text the code and you get the exact same single serving nachos — no explanations needed.
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER CTA -->
+    <div class="max-w-3xl mx-auto px-6 py-16 text-center">
+        <div class="text-3xl font-black tracking-tighter mb-4">Ready to order your custom single serving?</div>
+        <p class="text-xl text-zinc-400 mb-8">Build above → Copy your code → DM Aaron</p>
+        
+        <a href="https://www.facebook.com/aahigh" target="_blank" 
+           class="inline-flex items-center gap-x-3 bg-yellow-400 hover:bg-yellow-300 transition text-black font-bold px-12 py-4 rounded-3xl text-xl">
+            MESSAGE AARON ON FACEBOOK
+        </a>
+    </div>
+
+    <script>
+        // ============================================
+        // PRICING VARIABLES - EDIT THESE AT THE TOP
+        // ============================================
+        const PRICING = {
+            BASE_SERVING: 8.50,           // Base price for one single serving
+            BLACK_BEANS_ADD: 1.00,        // Exact cost to pass through for the can
+            TOPPING_ADD: 0.75,            // Average add per extra topping
+            TAX_RATE: 0.0825              // Approx Fresno sales tax
+        };
+        // ============================================
+
+        let currentRatio = 'B';
+        let currentBlend = 5;
+        let selectedToppings = new Set();
+
+        const TOPPINGS_LIST = [
+            { bit: 0, name: 'Black Beans', priceImpact: true, note: '+$1 can cost' },
+            { bit: 1, name: 'Corn', priceImpact: false },
+            { bit: 2, name: 'Southwest Corn', priceImpact: false },
+            { bit: 3, name: 'Green Chilies', priceImpact: false },
+            { bit: 4, name: 'Sweet Peas', priceImpact: false },
+            { bit: 5, name: 'Chickpeas', priceImpact: false },
+            { bit: 6, name: 'Masala Spice', priceImpact: false },
+            { bit: 7, name: 'Extra Dip', priceImpact: false }
+        ];
+
+        function calculatePrice() {
+            let price = PRICING.BASE_SERVING;
+            
+            // Black Beans special handling
+            if (selectedToppings.has(0)) {
+                price += PRICING.BLACK_BEANS_ADD;
+            }
+            
+            // Other toppings
+            const otherToppings = Array.from(selectedToppings).filter(b => b !== 0);
+            price += otherToppings.length * PRICING.TOPPING_ADD;
+            
+            const tax = price * PRICING.TAX_RATE;
+            const total = price + tax;
+            
+            return {
+                base: PRICING.BASE_SERVING,
+                blackBeans: selectedToppings.has(0) ? PRICING.BLACK_BEANS_ADD : 0,
+                toppings: otherToppings.length * PRICING.TOPPING_ADD,
+                tax: tax,
+                total: total
+            };
+        }
+
+        function updatePriceDisplay() {
+            const p = calculatePrice();
+            const priceEl = document.getElementById('live-price');
+            priceEl.textContent = '$' + p.total.toFixed(2);
+            
+            // Update summary
+            const summary = document.getElementById('live-summary');
+            let html = `
+                <div class="flex justify-between"><span>Base serving</span><span>$${p.base.toFixed(2)}</span></div>
+            `;
+            if (p.blackBeans > 0) {
+                html += `<div class="flex justify-between text-yellow-400"><span>Black Beans (can cost)</span><span>+$${p.blackBeans.toFixed(2)}</span></div>`;
+            }
+            if (p.toppings > 0) {
+                html += `<div class="flex justify-between"><span>Toppings (${Array.from(selectedToppings).filter(b=>b!==0).length})</span><span>+$${p.toppings.toFixed(2)}</span></div>`;
+            }
+            html += `<div class="flex justify-between text-xs text-zinc-400 pt-2 border-t border-zinc-700"><span>Tax (est.)</span><span>$${p.tax.toFixed(2)}</span></div>`;
+            
+            summary.innerHTML = html;
+        }
+
+        function setRatio(ratio) {
+            currentRatio = ratio;
+            ['B','C','S','X'].forEach(r => {
+                const btn = document.getElementById('btn' + r);
+                if (btn) btn.classList.remove('bg-yellow-400', 'text-black', 'border-yellow-400');
+            });
+            document.getElementById('btn' + ratio).classList.add('bg-yellow-400', 'text-black', 'border-yellow-400');
+            updateAll();
+        }
+
+        function setBlend(digit) {
+            currentBlend = digit;
+            document.querySelectorAll('.blend-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-yellow-400', 'text-black');
+                if (parseInt(btn.dataset.digit) === digit) btn.classList.add('active', 'bg-yellow-400', 'text-black');
+            });
+            updateAll();
+        }
+
+        function toggleTopping(bit) {
+            const card = document.getElementById('topping-' + bit);
+            if (selectedToppings.has(bit)) {
+                selectedToppings.delete(bit);
+                card.classList.remove('active', 'border-yellow-400');
+            } else {
+                selectedToppings.add(bit);
+                card.classList.add('active', 'border-yellow-400');
+            }
+            updateAll();
+        }
+
+        function updateCode() {
+            const bitsArray = Array.from(selectedToppings);
+            const ratioValue = {'B':0,'C':1,'S':2,'X':3}[currentRatio];
+            const combined = (ratioValue << 12) | (currentBlend << 8) | (bitsArray.reduce((a,b) => a | (1 << b), 0));
+            
+            const ALPHABET = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+            let codePart = '';
+            let num = combined;
+            for (let i = 0; i < 3; i++) {
+                codePart = ALPHABET[num % 32] + codePart;
+                num = Math.floor(num / 32);
+            }
+            
+            const fullCode = currentRatio + currentBlend + codePart;
+            document.getElementById('code-display').textContent = fullCode;
+        }
+
+        function updateAll() {
+            updateCode();
+            updatePriceDisplay();
+        }
+
+        function copyCode() {
+            const code = document.getElementById('code-display').textContent;
+            const price = document.getElementById('live-price').textContent;
+            navigator.clipboard.writeText(`${code} — ${price}`).then(() => {
+                const orig = document.getElementById('code-display').style.borderColor;
+                document.getElementById('code-display').style.borderColor = '#22c55e';
+                setTimeout(() => {
+                    document.getElementById('code-display').style.borderColor = orig || '#FFD70030';
+                }, 1200);
+            });
+        }
+
+        function initializeUI() {
+            // Ratio buttons
+            ['B','C','S','X'].forEach(r => {
+                const btn = document.getElementById('btn' + r);
+                if (btn) btn.onclick = () => setRatio(r);
+            });
+            document.getElementById('btnB').classList.add('bg-yellow-400', 'text-black', 'border-yellow-400');
+
+            // Blend buttons
+            const blendContainer = document.getElementById('blend-buttons');
+            for (let i = 0; i <= 9; i++) {
+                const btn = document.createElement('button');
+                btn.className = `blend-btn flex-1 py-2 text-sm rounded-xl border border-white/20 hover:border-yellow-400 ${i === 5 ? 'active bg-yellow-400 text-black font-bold' : ''}`;
+                btn.textContent = i;
+                btn.dataset.digit = i;
+                btn.onclick = () => setBlend(i);
+                blendContainer.appendChild(btn);
+            }
+
+            // Toppings
+            const grid = document.getElementById('toppings-grid');
+            TOPPINGS_LIST.forEach(item => {
+                const card = document.createElement('div');
+                card.id = 'topping-' + item.bit;
+                card.className = `topping-card border border-white/20 rounded-2xl p-4 cursor-pointer hover:border-yellow-400/60`;
+                card.innerHTML = `
+                    <div class="font-semibold flex justify-between items-start">
+                        <span>${item.name}</span>
+                        ${item.priceImpact ? `<span class="text-yellow-400 text-xs font-normal">+$${PRICING.BLACK_BEANS_ADD.toFixed(2)}</span>` : ''}
+                    </div>
+                    ${item.note ? `<div class="text-xs text-zinc-400 mt-1">${item.note}</div>` : ''}
+                `;
+                card.onclick = () => toggleTopping(item.bit);
+                grid.appendChild(card);
+            });
+
+            // Initial state
+            setTimeout(() => {
+                // Default selection
+                [0, 5, 6].forEach(bit => { // Black Beans + Chickpeas + Masala
+                    const card = document.getElementById('topping-' + bit);
+                    if (card) {
+                        selectedToppings.add(bit);
+                        card.classList.add('active', 'border-yellow-400');
+                    }
+                });
+                updateAll();
+            }, 600);
+        }
+
+        window.onload = function() {
+            initializeUI();
+            
+            // Keyboard hint
+            console.log('%c[Hightower Helix] Landing with live pricing ready. Edit PRICING object at top of script.', 'color:#666');
+        }
+    </script>
+</body>
+</html>
